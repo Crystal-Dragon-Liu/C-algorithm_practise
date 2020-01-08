@@ -14,6 +14,7 @@
 #include "Sor.hpp"
 #include <ctime>
 #include "breadthFirstSearch.hpp"
+#include "Dijkstra_Algorithm.hpp"
 using namespace std;
 
 int main(int argc, const char * argv[]) {
@@ -54,13 +55,32 @@ int main(int argc, const char * argv[]) {
     
     //breadthFirstSearch test
     
-    breadthFirstSearch *b = new breadthFirstSearch();
+//    breadthFirstSearch *b = new breadthFirstSearch();
+//
+//
+//    b->findSeller();
+    
+//
     
     
     
     
-    b->findSeller();
+    
+    
+    //Dijkstra's algorithm
+    
+    
+    
+    Dijkstra_Algorithm *DA = new Dijkstra_Algorithm();
+    
+    //DA->print_information();
+    DA->findRoad();
+    
+    
     
     return 0;
     
 }
+
+
+
