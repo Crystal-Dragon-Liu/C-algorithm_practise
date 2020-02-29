@@ -7,10 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D21D586240755D70006CD08 /* The_symbol_table.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3D21D584240755D70006CD08 /* The_symbol_table.cpp */; };
+		3D3B0DDB23C45AAF00663234 /* Dijkstra_Algorithm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3D3B0DD923C45AAF00663234 /* Dijkstra_Algorithm.cpp */; };
+		3D69016C23C5C270008F9356 /* approximation_algorithm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3D69016A23C5C270008F9356 /* approximation_algorithm.cpp */; };
 		3D76537B238D1DE900392C18 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3D76537A238D1DE900392C18 /* main.cpp */; };
 		3D765383238E9DB600392C18 /* Sor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3D765381238E9DB600392C18 /* Sor.cpp */; };
 		3D765386238FC31500392C18 /* iteration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3D765384238FC31500392C18 /* iteration.cpp */; };
 		3D878A8B23A9F86D00BD311A /* breadthFirstSearch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3D878A8923A9F86D00BD311A /* breadthFirstSearch.cpp */; };
+		3D89EFFD23FE14A1004537A7 /* Priority_Queue_practise.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3D89EFFB23FE14A1004537A7 /* Priority_Queue_practise.cpp */; };
+		3D9B5F3D23E1721100768B12 /* sorting_LowLevel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3D9B5F3B23E1721100768B12 /* sorting_LowLevel.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,6 +31,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3D21D584240755D70006CD08 /* The_symbol_table.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = The_symbol_table.cpp; sourceTree = "<group>"; };
+		3D21D585240755D70006CD08 /* The_symbol_table.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = The_symbol_table.hpp; sourceTree = "<group>"; };
+		3D3B0DD923C45AAF00663234 /* Dijkstra_Algorithm.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Dijkstra_Algorithm.cpp; sourceTree = "<group>"; };
+		3D3B0DDA23C45AAF00663234 /* Dijkstra_Algorithm.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Dijkstra_Algorithm.hpp; sourceTree = "<group>"; };
+		3D69016A23C5C270008F9356 /* approximation_algorithm.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = approximation_algorithm.cpp; sourceTree = "<group>"; };
+		3D69016B23C5C270008F9356 /* approximation_algorithm.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = approximation_algorithm.hpp; sourceTree = "<group>"; };
 		3D765377238D1DE900392C18 /* Dat_Structure */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Dat_Structure; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D76537A238D1DE900392C18 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		3D765381238E9DB600392C18 /* Sor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Sor.cpp; sourceTree = "<group>"; };
@@ -34,6 +45,10 @@
 		3D765385238FC31500392C18 /* iteration.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = iteration.hpp; sourceTree = "<group>"; };
 		3D878A8923A9F86D00BD311A /* breadthFirstSearch.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = breadthFirstSearch.cpp; sourceTree = "<group>"; };
 		3D878A8A23A9F86D00BD311A /* breadthFirstSearch.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = breadthFirstSearch.hpp; sourceTree = "<group>"; };
+		3D89EFFB23FE14A1004537A7 /* Priority_Queue_practise.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Priority_Queue_practise.cpp; sourceTree = "<group>"; };
+		3D89EFFC23FE14A1004537A7 /* Priority_Queue_practise.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Priority_Queue_practise.hpp; sourceTree = "<group>"; };
+		3D9B5F3B23E1721100768B12 /* sorting_LowLevel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = sorting_LowLevel.cpp; sourceTree = "<group>"; };
+		3D9B5F3C23E1721100768B12 /* sorting_LowLevel.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = sorting_LowLevel.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +88,16 @@
 				3D765385238FC31500392C18 /* iteration.hpp */,
 				3D878A8923A9F86D00BD311A /* breadthFirstSearch.cpp */,
 				3D878A8A23A9F86D00BD311A /* breadthFirstSearch.hpp */,
+				3D3B0DD923C45AAF00663234 /* Dijkstra_Algorithm.cpp */,
+				3D3B0DDA23C45AAF00663234 /* Dijkstra_Algorithm.hpp */,
+				3D69016A23C5C270008F9356 /* approximation_algorithm.cpp */,
+				3D69016B23C5C270008F9356 /* approximation_algorithm.hpp */,
+				3D9B5F3B23E1721100768B12 /* sorting_LowLevel.cpp */,
+				3D9B5F3C23E1721100768B12 /* sorting_LowLevel.hpp */,
+				3D89EFFB23FE14A1004537A7 /* Priority_Queue_practise.cpp */,
+				3D89EFFC23FE14A1004537A7 /* Priority_Queue_practise.hpp */,
+				3D21D584240755D70006CD08 /* The_symbol_table.cpp */,
+				3D21D585240755D70006CD08 /* The_symbol_table.hpp */,
 			);
 			path = Dat_Structure;
 			sourceTree = "<group>";
@@ -137,7 +162,12 @@
 				3D765383238E9DB600392C18 /* Sor.cpp in Sources */,
 				3D76537B238D1DE900392C18 /* main.cpp in Sources */,
 				3D765386238FC31500392C18 /* iteration.cpp in Sources */,
+				3D69016C23C5C270008F9356 /* approximation_algorithm.cpp in Sources */,
+				3D89EFFD23FE14A1004537A7 /* Priority_Queue_practise.cpp in Sources */,
 				3D878A8B23A9F86D00BD311A /* breadthFirstSearch.cpp in Sources */,
+				3D3B0DDB23C45AAF00663234 /* Dijkstra_Algorithm.cpp in Sources */,
+				3D9B5F3D23E1721100768B12 /* sorting_LowLevel.cpp in Sources */,
+				3D21D586240755D70006CD08 /* The_symbol_table.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

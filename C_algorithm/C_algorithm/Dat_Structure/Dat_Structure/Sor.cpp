@@ -24,11 +24,6 @@ int sort_practise::findSmallestItem(std::vector<int> i)
     return smallest_index;
 }
 
-
-
-
-
-
 vector<int>::iterator sort_practise::findSmallestItem(std::vector<int>&i, std::vector<int>::iterator b)
 {
     //int smallest = *b;
@@ -67,3 +62,4 @@ vector<int> sort_practise::sorting_practise(std::vector<int> &i)
     return i;
     
 }
+
