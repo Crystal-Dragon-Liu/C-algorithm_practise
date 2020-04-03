@@ -71,5 +71,4 @@ public:
     void sort(std::vector<int> &aa, int lo, int hi);
     void sort(std::vector<int> &aa);
     void sort_3way(std::vector<int> &aa, int lo, int hi);
-    
 };
