@@ -17,6 +17,7 @@
 #include <map>
 #include <set>
 #include <list>
+#include <stack>
 using namespace std;
 #endif /* Graph_practise_hpp */
 
@@ -43,6 +44,7 @@ public:
     int countOfEdge();  // 边数
     void addEdge(int firstVertex, int secondVertex);
     void print_allVertexAndEdge();
+    map<int, Vertex*> getGraphVertexSet();
 private:
     int m_countOfVertex;
     int m_countOfEdge;
@@ -52,36 +54,37 @@ private:
 //    vector<Vertex *> neighbourVertexs;
 };
 
-//
-//class SimpleGraph
-//{
-//public:
-//    SimpleGraph(string path);
-//    SimpleGraph(int v); // 创建含有V个顶点的图
-//    int V(); //获得顶点数
-//    int E();//边数
-//    void addEdge(int v, int w); //向图中添加一条边 v-w
-//    vector<int> adjoin(int v);
-//    string  toString(); //对象的字符串表示
-//private:
-//    int m_V;//顶点数目
-//    int m_E;//边数
-//    vector< vector<int> > m_adj;
-//    void print_adj();
-//};
-//
-//class Vertex
-//{
-//public:
-//    Vertex(int val)
-//    {
-//        m_value = val;
-//        m_number_of_link =0;
-//
-//    };
-//private:
-//    int m_value;
-//    int m_number_of_link;
-//    vector<Vertex* > neighbour;
-//
-//};
+
+class DepthFirstGraph
+{
+public:
+    DepthFirstGraph(undirect_Graph uGraph, int s);
+    bool isMarked(int w);
+    int getCount();
+private:
+    vector<bool> marked;
+    int count;
+    void dfs(undirect_Graph uGraph, int v);
+};
+
+
+class DepthFirstGraphForSearchPaths
+{
+public:
+    DepthFirstGraphForSearchPaths(undirect_Graph uGraph, int s);
+    bool isMarked(int w);
+    int getCount();
+    int getStartPoint();
+    int getEdgeStart(int v);
+    void printPaths();
+    bool hasPathTo(int v);
+    stack<int> pathStore(int v);
+private:
+    map<int, int> EdgeTo;//记录每个顶点第一次被谁访问
+    vector<bool> marked;
+    int count;
+    int startPoint;
+    void dfs(undirect_Graph uGraph, int v);
+    
+    
+};
