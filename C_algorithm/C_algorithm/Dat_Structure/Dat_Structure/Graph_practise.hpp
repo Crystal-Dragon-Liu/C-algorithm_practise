@@ -18,6 +18,7 @@
 #include <set>
 #include <list>
 #include <stack>
+#include <queue>
 using namespace std;
 #endif /* Graph_practise_hpp */
 
@@ -67,7 +68,6 @@ private:
     void dfs(undirect_Graph uGraph, int v);
 };
 
-
 class DepthFirstGraphForSearchPaths
 {
 public:
@@ -85,6 +85,21 @@ private:
     int count;
     int startPoint;
     void dfs(undirect_Graph uGraph, int v);
-    
-    
+};
+
+class BreadthFirstPaths
+{
+private:
+    vector<bool> marked;
+    map<int, int> EdgeTo;
+    int startPoint;
+public:
+    bool isMarked(int v);
+    BreadthFirstPaths(undirect_Graph uGraph, int s);
+    void bfs(undirect_Graph uGraph, int s);
+    bool hasPathTo(int v);
+    void printPaths();
+    int getEdgeStart(int v);
+    stack<int> pathStore(int v);
+    int getStartPoint();
 };

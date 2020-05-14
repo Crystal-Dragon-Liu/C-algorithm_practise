@@ -216,3 +216,87 @@ stack<int> DepthFirstGraphForSearchPaths::pathStore(int v)
     pathstore.push(getStartPoint());
     return pathstore;
 }
+
+
+BreadthFirstPaths::BreadthFirstPaths(undirect_Graph uGraph, int s)
+{
+    marked = vector<bool>(uGraph.countOfVertex(), false);
+    startPoint = s;
+    bfs(uGraph, startPoint);
+}
+
+void BreadthFirstPaths::bfs(undirect_Graph uGraph, int s)
+{
+    queue<int> NeighbourNotMarked;
+    //将起点先加入队列
+    marked[s] = true;
+    NeighbourNotMarked.push(s);
+    //开始广度优先搜索
+    while(!NeighbourNotMarked.empty()) //队列为空就意味着，已经连通图没有未被标记的顶点了
+    {
+        
+        int v = NeighbourNotMarked.front();//获得队列当中第一个顶点
+        cout << "-------------the first Vertex " << v << " in Queue will be deleted-------------" << endl;
+        NeighbourNotMarked.pop();//把第一个顶点从队列删除，因为它已经被标注，并且它的邻接点马上要被check
+        list<Vertex*> V_uGraphVertexSet = uGraph.getGraphVertexSet()[v]->neighbours;
+        //获得v顶点的邻接表
+        list<Vertex*>::iterator iter = V_uGraphVertexSet.begin();
+        for(iter; iter != V_uGraphVertexSet.end(); iter++)
+        {
+            if(!isMarked((*iter)->value))
+            {
+                EdgeTo.insert(pair<int, int>((*iter)->value, v));
+                marked[(*iter)->value] = true;
+                NeighbourNotMarked.push((*iter)->value);
+                cout << (*iter)->value << "has been pushed into the Queue we created  " << endl;
+            }
+        }
+        
+    }
+    cout << "Queue is empty!" << endl;
+}
+
+bool BreadthFirstPaths::isMarked(int v)
+{
+    return marked[v];
+}
+
+bool BreadthFirstPaths::hasPathTo(int v)
+{
+    return isMarked(v);
+}
+
+void BreadthFirstPaths::printPaths()
+{
+    map<int, int>::iterator iter = EdgeTo.begin();
+    cout << "-----------print edge-----------" <<  endl;
+    for(iter; iter != EdgeTo.end(); iter++)
+    {
+        cout << (*iter).first << "<---" << (*iter).second << endl;
+    }
+}
+stack<int> BreadthFirstPaths::pathStore(int v)
+{
+    stack<int> pathstore;
+    if(!isMarked(v)) return stack<int>();
+    for(int x = v; x != getStartPoint(); x = getEdgeStart(x))
+    {
+        pathstore.push(x);
+    }
+    pathstore.push(getStartPoint());
+    return pathstore;
+}
+int BreadthFirstPaths::getStartPoint()
+{
+    return startPoint;
+}
+int BreadthFirstPaths::getEdgeStart(int v)
+{
+    auto iter = EdgeTo.find(v);
+       if(iter != EdgeTo.end())
+       {
+           return iter->second;
+       }
+       return -1;
+}
+

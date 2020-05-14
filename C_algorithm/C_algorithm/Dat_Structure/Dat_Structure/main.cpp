@@ -896,51 +896,86 @@ int main(int argc, const char * argv[])
     
     
 //测试二分图最大匹配
+    
+    //测试深度优先搜索
+//    string path = "/Users/crystal-dragon-lyb/Documents/C-algorithm_practise/C_algorithm/C_algorithm/Dat_Structure/Dat_Structure/data/graph_initial_1.txt";
+//    undirect_Graph graph(path);
+    
+//    DepthFirstGraph dfg(graph, 0);
+//    cout << dfg.getCount() << endl;
+//    int startPoint = 0;
+//    DepthFirstGraphForSearchPaths dffsp(graph, startPoint);
+//    dffsp.printPaths();
+//    for(int v = 4; v < graph.countOfVertex(); v++)
+//    {
+//
+//        auto x = dffsp.pathStore(v);
+//        while(!x.empty())
+//        {
+//            cout << x.top() << endl;
+//            x.pop();
+//        }
+//        break;
+//    }
+    //    SearchPaths sp;
+    //    for(int v = 0; v < graph.countOfVertex(); v++)
+    //    {
+    //        cout << startPoint << " to " << v << " :  ";
+    //        if(sp.hasPathTo(dffsp, v))
+    //        {
+    //            auto x = sp.pathStore(dffsp, v);
+    //            for(int i = 0; i < x.size(); i++)
+    //            {
+    //                if(x.top() == startPoint)
+    //                {
+    //                    cout << x.top() << endl;
+    //                }
+    //                else
+    //                {
+    //                    cout << " - " << x.top() ;
+    //                    x.pop();
+    //                }
+    //
+    //
+    //            }
+    //            cout << endl;
+    //
+    //        }
+    //    }
+    //
+    
+    
+    
+    
+    
+    //测试广度优先搜索
     string path = "/Users/crystal-dragon-lyb/Documents/C-algorithm_practise/C_algorithm/C_algorithm/Dat_Structure/Dat_Structure/data/graph_initial_1.txt";
     undirect_Graph graph(path);
     graph.print_allVertexAndEdge();
-//    DepthFirstGraph dfg(graph, 0);
-//    cout << dfg.getCount() << endl;
     int startPoint = 0;
-    DepthFirstGraphForSearchPaths dffsp(graph, startPoint);
-    dffsp.printPaths();
+    
+    
+    BreadthFirstPaths bfs(graph, startPoint);
+    bfs.printPaths();
     for(int v = 4; v < graph.countOfVertex(); v++)
-    {
-        
-        auto x = dffsp.pathStore(v);
-        while(!x.empty())
         {
-            cout << x.top() << endl;
-            x.pop();
+    
+            auto x = bfs.pathStore(v);
+            while(!x.empty())
+            {
+                cout << x.top() << endl;
+                x.pop();
+            }
+            break;
         }
-        break;
-    }
-//    SearchPaths sp;
-//    for(int v = 0; v < graph.countOfVertex(); v++)
-//    {
-//        cout << startPoint << " to " << v << " :  ";
-//        if(sp.hasPathTo(dffsp, v))
-//        {
-//            auto x = sp.pathStore(dffsp, v);
-//            for(int i = 0; i < x.size(); i++)
-//            {
-//                if(x.top() == startPoint)
-//                {
-//                    cout << x.top() << endl;
-//                }
-//                else
-//                {
-//                    cout << " - " << x.top() ;
-//                    x.pop();
-//                }
-//                   
-//                
-//            }
-//            cout << endl;
-//
-//        }
-//    }
-//    
+    
+    
+    
+    
+    
+    
+    
+
     
     
     
