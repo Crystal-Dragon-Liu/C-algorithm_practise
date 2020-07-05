@@ -300,3 +300,97 @@ int BreadthFirstPaths::getEdgeStart(int v)
        return -1;
 }
 
+
+connected_components::connected_components(undirect_Graph uGraph)
+{
+    marked = vector<bool>(uGraph.countOfVertex(), false);
+    for(int s = 0; s < uGraph.countOfVertex(); s++)
+    {
+        if(!marked[s])
+        {
+            dfs(uGraph, s);
+            count++;
+        }
+    }
+    int countOfComponents = getCountOfCom();
+    cout << "连通分量个数： " << countOfComponents << endl;
+    vector<vector<int> > a_temp(countOfComponents);
+    for(int i = 0; i < countOfComponents; i++)
+    {
+        for(int j = 0; j < uGraph.countOfVertex(); j++)
+        {
+            if(isBelongTo(j, i))
+            {
+                a_temp[i].push_back(j);
+            }
+        }
+    }
+}
+
+void connected_components::dfs(undirect_Graph uGraph, int v)
+{
+    marked[v] = true;
+    pair<int, int> id_element(v, count);
+    id.insert(id_element);
+    list<Vertex*> V_uGraphVertexSet = uGraph.getGraphVertexSet()[v]->neighbours;
+    //获得v顶点的邻接表
+    list<Vertex*>::iterator iter = V_uGraphVertexSet.begin();
+    for(iter; iter != V_uGraphVertexSet.end(); iter++)
+    {
+        if(!marked[(*iter)->value])
+            dfs(uGraph, (*iter)->value);
+    }
+}
+
+bool connected_components::connected(int v, int w)
+{
+ 
+    return id.find(v)->second == id.find(w)->second;
+}
+
+int connected_components::getId(int v)
+{
+    return id[v];
+}
+int connected_components::getCount()
+{
+    return count;
+}
+
+void connected_components::printConnectedComponents()
+{
+    map<int, int>::iterator iter = id.begin();
+    for(iter; iter != id.end(); iter++)
+    {
+        cout << (*iter).first << " " << (*iter).second << endl;
+    }
+    
+}
+
+int connected_components::getCountOfCom()
+{
+    int c = 1;
+    int index = id.find(0)->second;
+    map<int, int>::iterator iter = id.begin();
+    for(iter; iter != id.end(); iter++)
+    {
+        if((*iter).second != index)
+        {
+          c++;
+            index = (*iter).second;
+        }
+            
+    }
+    return c;
+}
+bool connected_components::isBelongTo(int v, int component)
+{
+    if(id.find(v)->second == component)
+        return true;
+    else
+        return false;
+}
+
+
+
+
